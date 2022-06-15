@@ -1,4 +1,7 @@
+from enum import Enum
+
 from django.db import models
+
 
 #Model Waiter
 class Waiter(models.Model):
@@ -18,37 +21,44 @@ class Chef(models.Model):
 
 #Model Table
 class Table(models.Model):
-    waiter = models.ForeignKey(Waiter) #??????
-    table_number = models.IntegerField()
+    #order = models.ForeignKey(Order, on_delete=models.RESTRICT) #??????
+    table_number = models.IntegerField(default=None)
 
 
 #Model Order
 class Order(models.Model):
-    waiter = models.ForeignKey(Waiter)
-    chef = models.ForeignKey(Waiter)
-    table = models.ForeignKey(Table)
-    timestamp = models.DateTimeField()
-    cooked = models.BooleanField()
-    delivered = models.BooleanField()
-    billed = models.BooleanField()
-    dish_ID = models.IntegerField()
-    extra_wishes = models.CharField(max_length=250)
 
-    def update_cooked(self, status):
-        cooked = status
+    class OrderStatus(models.TextChoices):
+        UNASSIGNED = "unassigned"
+        IN_PROGRESS = "in_progress"
+        COOKED = "cooked"
+        DELIVERED = "delivered"
+
+    waiter = models.ForeignKey(Waiter, on_delete=models.SET_NULL, default=None, null=True)
+    table = models.ForeignKey(Table, on_delete=models.SET_NULL, default=None, null=True)
+    chef = models.ForeignKey(Chef, on_delete=models.SET_NULL, default=None, blank=True, null=True)
+    timestamp = models.DateTimeField(default=None)
+    status = models.CharField(max_length=20, default=OrderStatus.UNASSIGNED)
+    dish_ID = models.IntegerField(default=-1)
+    extra_wishes = models.CharField(max_length=250, default=None)
+
 
 #Model Reservation
 class Reservation(models.Model):
-    waiter = models.ForeignKey(Waiter)
     customer_name = models.CharField(max_length=100)
     date = models.DateTimeField()
-    table = models.ForeignKey(Table)
-
-# in Class Customer
-#waiter = models.ForeignKey(Waiter, on_delete=models.CASCADE) -> wenn man zugeordneten
-# Waiter löscht dann löscht man auch alle Customer die diesen Waiter als Waiter hatten
+    table = models.ForeignKey(Table, on_delete=models.SET_NULL, null=True)
 
 #es gibt noch statt ForeignKey OneToOne und ManyToMany (brauchen wir das auch???) -> wahrscheinlich ja bei Waiter
 
 #https://ilovedjango.com/django/models-and-databases/foreign-keys-on_delete-option-in-django-models/
+#https://stackoverflow.com/questions/54802616/how-to-use-enums-as-a-choice-field-in-django-model
+#https://stackoverflow.com/questions/16046478/django-model-nullable-field
 
+#manytomany -> tabelle
+#https://www.sankalpjonna.com/learn-django/the-right-way-to-use-a-manytomanyfield-in-django
+#https://zerotobyte.com/django-many-to-many-relationship-explained/
+#https://books.agiliq.com/projects/django-orm-cookbook/en/latest/one_to_many.html
+#https://www.reddit.com/r/django/comments/l937f1/the_right_way_to_use_a_manytomanyfield_in_django/
+
+#query bei abfrage in tests
