@@ -68,6 +68,10 @@ class Reservation(models.Model):
     table = models.ForeignKey(Table, on_delete=models.SET_NULL, null=True)
     places = models.IntegerField(default=None, null=True)
 
+
+
+
+
 # es gibt noch statt ForeignKey OneToOne und ManyToMany (brauchen wir das auch???) -> wahrscheinlich ja bei Waiter
 
 # https://ilovedjango.com/django/models-and-databases/foreign-keys-on_delete-option-in-django-models/
