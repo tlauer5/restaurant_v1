@@ -55,7 +55,7 @@ class Order(models.Model):
 
     def info_for_waiter(self):
         return '\nStatus: ' + self.get_status_display() + \
-               '\nWaiter: ' + str(self.chef) + \
+               '\nWaiter: ' + str(self.waiter) + \
                '\nTable Number: ' + str(self.table.table_number) + \
                '\nDish: ' + str(self.dish_ID) + \
                '\nExtra wishes: ' + str(self.extra_wishes) + \

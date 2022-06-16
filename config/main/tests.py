@@ -13,29 +13,18 @@ ALL_FIXTURES = [
 class WaitersTests(TestCase):
     fixtures = ALL_FIXTURES
 
-    def test_waiter_print(self):
-        first_waiter = Waiter.objects.get(pk=1) #(name="Hannah")
-        print("\nTestcase test_waiter_print:")
-        print(first_waiter)
-        print("finished\n")
+    def test_create_order(self):
+        #Number of Orders before
+        all_orders = Order.objects.filter()
 
-    def test_waiter_assertEqual(self):
-        first_waiter = Waiter.objects.get(pk=2)
-        self.assertEqual(first_waiter.lastname, "Limbach")
+        if not all_orders.exists():
+            return
 
-    def test_create_waiter(self):
-        newWaiter = Waiter.objects.create(surname="Hannes", lastname="Hamm")
-        print("\nTestcase test_create_waiter:")
-        print(newWaiter)
-        print("finished\n")
+        print(all_orders.count())
 
-    def test_showAllOrders(self):
-        waiter_pk = 1
-        unassignedOrders = Order.objects.filter(waiter=waiter_pk, status=Order.OrderStatus.UNASSIGNED)
-        inProgressOrders = Order.objects.filter(waiter=waiter_pk, status=Order.OrderStatus.IN_PROGRESS)
+
+    def test_show_cooked_orders(self):
         cookedOrders = Order.objects.filter(status=Order.OrderStatus.COOKED)
-        deliveredOrders = Order.objects.filter(waiter=waiter_pk, status=Order.OrderStatus.DELIVERED)
-        billedOrders = Order.objects.filter(waiter=waiter_pk, status=Order.OrderStatus.BILLED)
 
         for order in cookedOrders:
             print(order.info_for_waiter())
@@ -75,27 +64,22 @@ class ChefsTests(TestCase):
         # Updated PK and Status
         print(Order.objects.filter(pk=order_to_assign_pk)[0].info_for_chef())
 
-
-
-    def test_getNewOrder(self):
-        pass
-
-    def test_update_order(self):
-        pass
-
-        #for order in qSet:
-         #   print(order)
-         #  print("\n")
-
-
-
-
+    def test_admin_create_new_chef(self):
+        return
 
 
 
 
 #https://docs.djangoproject.com/en/4.0/topics/testing/overview/
 
-#pk über namen herausfinden
+#pk oder anderes über namen herausfinden -> man erhält von filter ein queryset zurück (darüber kann man iterieren (for order in querySetOrder:..))
 #new_chef_pk = Chef.objects.filter(surname="Kurt", lastname="Lamm")[0].pk
 #am besten noch prüfen ob nur einer in Liste ist oder ob überhaupt jemand mit dem Namen gefunden wurde
+
+#assertEqual zum Vergleich
+
+
+#mit objects.get erhält man Objekt zurück das darauf passt (Achtung: nur eins -sonst fehler)
+#Order.objects.get(pk=2)
+#Order.objects.get(dish_ID=2)
+

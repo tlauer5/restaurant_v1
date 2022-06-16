@@ -107,10 +107,10 @@
         "model": "main.order",
         "pk": 9,
         "fields": {
-            "waiter": 3,
+            "waiter": 2,
             "chef": 3,
             "timestamp": "2022-04-27T18:40:00.00Z",
-            "table": 12,
+            "table": 4,
             "status": "cooked",
             "dish_ID": 26,
             "extra_wishes": "extra cutlery"

@@ -19,7 +19,7 @@
         "model": "main.waiter",
         "pk": 3,
         "fields": {
-            "surname": "Hannah",
+            "surname": "Mirjam",
             "lastname": "Blum"
         }
      }
