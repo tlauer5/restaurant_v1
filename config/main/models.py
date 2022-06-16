@@ -9,7 +9,7 @@ class Waiter(models.Model):
     lastname = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.surname + ' ' + self.lastname
+        return '\nSurname: ' + self.surname + '\nLastname: ' + self.lastname + '\n\n'
 
 #Model Chef
 class Chef(models.Model):
@@ -17,18 +17,21 @@ class Chef(models.Model):
     lastname = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.surname + ' ' + self.lastname
+        return '\nSurname: ' + self.surname + '\nLastname: ' + self.lastname + '\n\n'
 
 #Model Table
 class Table(models.Model):
-    #order = models.ForeignKey(Order, on_delete=models.RESTRICT) #??????
-    table_number = models.IntegerField(default=None)
+    table_number = models.IntegerField(default=None, null=True)
+    places = models.IntegerField(default=None, null=True)
+
+    def getTableNumber(self):
+        return self.table_number
 
 
 #Model Order
 class Order(models.Model):
 
-    class OrderStatus(models.TextChoices):
+    class OrderStatus(models.TextChoices): #Alternativ mit IntegerChoices
         UNASSIGNED = "unassigned"
         IN_PROGRESS = "in_progress"
         COOKED = "cooked"
@@ -46,8 +49,9 @@ class Order(models.Model):
 #Model Reservation
 class Reservation(models.Model):
     customer_name = models.CharField(max_length=100)
-    date = models.DateTimeField()
+    timestamp = models.DateTimeField(default=None, null=True)
     table = models.ForeignKey(Table, on_delete=models.SET_NULL, null=True)
+    places = models.IntegerField(default=None, null=True)
 
 #es gibt noch statt ForeignKey OneToOne und ManyToMany (brauchen wir das auch???) -> wahrscheinlich ja bei Waiter
 
