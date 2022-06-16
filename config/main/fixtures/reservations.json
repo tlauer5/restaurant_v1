@@ -5,7 +5,7 @@
         "fields": {
             "customer_name": "Rauch",
             "timestamp": "2022-04-26T20:00:00.00Z",
-            "table": 4,
+            "table": [4],
             "places": 2
         }
      },
@@ -15,7 +15,7 @@
         "fields": {
             "customer_name": "Schmied",
             "timestamp": "2022-04-26T21:00:00.00Z",
-            "table": 2,
+            "table": [2],
             "places": 2
         }
      },
@@ -25,7 +25,8 @@
         "fields": {
             "customer_name": "Lutz",
             "timestamp": "2022-04-27T18:00:00.00Z",
-            "table": 3
+            "table": [3],
+            "places": 4
         }
      },
     {
@@ -34,7 +35,7 @@
         "fields": {
             "customer_name": "Merkle",
             "timestamp": "2022-04-27T19:00:00.00Z",
-            "table": 17,
+            "table": [17],
             "places": 4
         }
      },
@@ -44,7 +45,7 @@
         "fields": {
             "customer_name": "Fisch",
             "timestamp": "2022-04-24T20:00:00.00Z",
-            "table": 4,
+            "table": [4],
             "places": 2
         }
      },
@@ -54,7 +55,7 @@
         "fields": {
             "customer_name": "Elefant",
             "timestamp": "2022-04-26T17:00:00.00Z",
-            "table": 20,
+            "table": [20],
             "places": 2
         }
      },
@@ -64,7 +65,7 @@
         "fields": {
             "customer_name": "Giraffe",
             "timestamp": "2022-04-19T18:00:00.00Z",
-            "table": 7,
+            "table": [7],
             "places": 3
         }
      },
@@ -74,7 +75,7 @@
         "fields": {
             "customer_name": "Bauer",
             "timestamp": "2022-05-25T21:00:00.00Z",
-            "table": 1,
+            "table": [1],
             "places": 2
         }
      },
@@ -84,7 +85,7 @@
         "fields": {
             "customer_name": "Dachs",
             "timestamp": "2022-04-26T20:00:00.00Z",
-            "table": 9,
+            "table": [9],
             "places": 8
         }
      },
@@ -94,7 +95,7 @@
         "fields": {
             "customer_name": "Leib",
             "timestamp": "2022-04-22T21:00:00.00Z",
-            "table": 2,
+            "table": [2],
             "places": 2
         }
      },
@@ -104,7 +105,7 @@
         "fields": {
             "customer_name": "Laib",
             "timestamp": "2022-04-24T18:10:00.00Z",
-            "table": 12,
+            "table": [12],
             "places": 5
         }
      },
@@ -114,8 +115,38 @@
         "fields": {
             "customer_name": "Himmel",
             "timestamp": "2022-05-27T19:30:00.00Z",
-            "table": 1,
+            "table": [1],
             "places": 2
+        }
+     },
+    {
+        "model": "main.reservation",
+        "pk": 13,
+        "fields": {
+            "customer_name": "Schott",
+            "timestamp": "2022-06-22T20:00:00.00Z",
+            "table": [5, 11, 17],
+            "places": 11
+        }
+     },
+    {
+        "model": "main.reservation",
+        "pk": 14,
+        "fields": {
+            "customer_name": "Rauch",
+            "timestamp": "2022-04-28T18:10:00.00Z",
+            "table": [12],
+            "places": 5
+        }
+     },
+    {
+        "model": "main.reservation",
+        "pk": 15,
+        "fields": {
+            "customer_name": "Liebherr",
+            "timestamp": "2022-05-27T19:30:00.00Z",
+            "table": [9, 15, 16],
+            "places": 16
         }
      }
 ]

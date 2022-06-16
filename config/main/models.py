@@ -65,7 +65,7 @@ class Order(models.Model):
 class Reservation(models.Model):
     customer_name = models.CharField(max_length=100)
     timestamp = models.DateTimeField(default=None, null=True)
-    table = models.ForeignKey(Table, on_delete=models.SET_NULL, null=True)
+    table = models.ManyToManyField(Table)#, on_delete=models.SET_NULL, null=True)
     places = models.IntegerField(default=None, null=True)
 
 
@@ -77,8 +77,12 @@ class Reservation(models.Model):
 # https://ilovedjango.com/django/models-and-databases/foreign-keys-on_delete-option-in-django-models/
 # https://stackoverflow.com/questions/54802616/how-to-use-enums-as-a-choice-field-in-django-model
 # https://stackoverflow.com/questions/16046478/django-model-nullable-field
+# https://stackoverflow.com/questions/7655438/how-do-django-fixtures-handle-manytomanyfields
 
-# manytomany -> tabelle
+# manytomany
+# reservations auf table ist manytomany -> dann muss man alle table in reservations.json als Liste angeben []
+# ein table kann schon allein mit foreign key mehrere reservations haben... aber eine reservation bisher nur ein tisch
+# mit manytomanyfield(table) -> können beide Objekte in beide Richtungen mehrere Objekte haben
 # https://www.sankalpjonna.com/learn-django/the-right-way-to-use-a-manytomanyfield-in-django
 # https://zerotobyte.com/django-many-to-many-relationship-explained/
 # https://books.agiliq.com/projects/django-orm-cookbook/en/latest/one_to_many.html
