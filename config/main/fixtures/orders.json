@@ -113,7 +113,7 @@
             "table": 12,
             "status": "cooked",
             "dish_ID": 26,
-            "extra_wishes": null
+            "extra_wishes": "extra cutlery"
         }
      },
   {
@@ -190,8 +190,8 @@
             "timestamp": "2022-04-27T20:17:00.00Z",
             "table": 9,
             "status": "unassigned",
-            "dish_ID": 54,
-            "extra_wishes": "medium"
+            "dish_ID": 24,
+            "extra_wishes": "no salad"
         }
      },
   {
@@ -204,7 +204,7 @@
             "table": 4,
             "status": "unassigned",
             "dish_ID": 87,
-            "extra_wishes": null
+            "extra_wishes": "extra plate"
         }
      },
      {
