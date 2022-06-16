@@ -49,6 +49,11 @@ class WaitersTests(TestCase):
     def test_delete_order(self):
         return
 
+    def test_create_reservation(self):
+        return
+        #mit mehreren Tischen ->manytomany zeigen!!!
+        #mit .add
+
 
 class ChefsTests(TestCase):
     fixtures = ALL_FIXTURES
