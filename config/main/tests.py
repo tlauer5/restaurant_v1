@@ -6,7 +6,8 @@ ALL_FIXTURES = [
     "waiters.json",
     "reservations.json",
     "tables.json",
-    "chefs.json"
+    "chefs.json",
+    "orders.json"
 ]
 
 class WaitersTests(TestCase):

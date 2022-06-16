@@ -25,9 +25,7 @@
         "fields": {
             "customer_name": "Lutz",
             "timestamp": "2022-04-27T18:00:00.00Z",
-            "table": 3,
-            "dish_ID": 43,
-            "extra_wishes": "extra cheese"
+            "table": 3
         }
      },
     {
@@ -37,9 +35,7 @@
             "customer_name": "Merkle",
             "timestamp": "2022-04-27T19:00:00.00Z",
             "table": 17,
-            "places": 4,
-            "dish_ID": 3,
-            "extra_wishes": null
+            "places": 4
         }
      },
     {
@@ -117,7 +113,7 @@
         "pk": 12,
         "fields": {
             "customer_name": "Himmel",
-            "timestamp": "2022-05-027T19:30:00.00Z",
+            "timestamp": "2022-05-27T19:30:00.00Z",
             "table": 1,
             "places": 2
         }
