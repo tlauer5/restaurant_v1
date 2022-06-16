@@ -85,6 +85,9 @@ class ChefsTests(TestCase):
         # Updated PK and Status
         print(Order.objects.filter(pk=order_to_assign_pk)[0].info_for_chef())
 
+
+class AdminTest(TestCase):
+
     def test_admin_create_new_chef(self):
         return
 
