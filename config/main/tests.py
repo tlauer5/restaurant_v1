@@ -84,6 +84,10 @@ class ChefsTests(TestCase):
     def test_admin_create_new_chef(self):
         return
 
+
+
+
+
 # https://docs.djangoproject.com/en/4.0/topics/testing/overview/
 
 # pk oder anderes über namen herausfinden -> man erhält von filter ein queryset zurück (darüber kann man iterieren (for order in querySetOrder:..))
