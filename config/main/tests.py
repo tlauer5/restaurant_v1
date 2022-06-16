@@ -47,7 +47,7 @@ class ChefsTests(TestCase):
     fixtures = ALL_FIXTURES
 
     def test_myOpenOrders(self):
-        chef_pk = 2;
+        chef_pk = 2
         for order in Order.objects.filter(chef=chef_pk, status=Order.OrderStatus.IN_PROGRESS):
             print(order)
 
