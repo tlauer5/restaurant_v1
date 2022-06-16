@@ -52,8 +52,7 @@ class WaitersTests(TestCase):
     def test_create_reservation(self):
         return
         #mit mehreren Tischen ->manytomany zeigen!!!
-        #mit .add
-
+        #mit .add machen
 
 class ChefsTests(TestCase):
     fixtures = ALL_FIXTURES
