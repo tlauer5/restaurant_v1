@@ -26,7 +26,8 @@
             "customer_name": "Lutz",
             "timestamp": "2022-04-27T18:00:00.00Z",
             "table": 3,
-            "places": 3
+            "dish_ID": 43,
+            "extra_wishes": "extra cheese"
         }
      },
     {
@@ -36,7 +37,9 @@
             "customer_name": "Merkle",
             "timestamp": "2022-04-27T19:00:00.00Z",
             "table": 17,
-            "places": 4
+            "places": 4,
+            "dish_ID": 3,
+            "extra_wishes": null
         }
      },
     {

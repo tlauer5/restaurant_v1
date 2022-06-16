@@ -3,9 +3,10 @@ from django.utils import dateparse
 from .models import *
 
 ALL_FIXTURES = [
-    "waiters.json"
-    "reservations.json"
-    "tables.json"
+    "waiters.json",
+    "reservations.json",
+    "tables.json",
+    "chefs.json"
 ]
 
 class WaitersTests(TestCase):

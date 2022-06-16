@@ -43,7 +43,7 @@ class Order(models.Model):
     timestamp = models.DateTimeField(default=None)
     status = models.CharField(max_length=20, default=OrderStatus.UNASSIGNED)
     dish_ID = models.IntegerField(default=-1)
-    extra_wishes = models.CharField(max_length=250, default=None)
+    extra_wishes = models.CharField(max_length=250, default=None, blank=True, null=True)
 
 
 #Model Reservation

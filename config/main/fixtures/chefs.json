@@ -1,0 +1,26 @@
+[
+    {
+        "model": "main.chef",
+        "pk": 1,
+        "fields": {
+            "surname": "Kurt",
+            "lastname": "Lamm"
+        }
+     },
+     {
+        "model": "main.chef",
+        "pk": 2,
+        "fields": {
+            "surname": "Maria",
+            "lastname": "Schuh"
+        }
+     },
+     {
+        "model": "main.chef",
+        "pk": 3,
+        "fields": {
+            "surname": "Ahmed",
+            "lastname": "Yigit"
+        }
+     }
+]
