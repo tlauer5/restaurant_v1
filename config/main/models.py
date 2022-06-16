@@ -24,8 +24,8 @@ class Table(models.Model):
     table_number = models.IntegerField(default=None, null=True)
     places = models.IntegerField(default=None, null=True)
 
-    def getTableNumber(self):
-        return self.table_number
+    def __str__(self):
+        return '\nTable: ' + self.table_number+ '\n\n'
 
 
 #Model Order
@@ -36,6 +36,7 @@ class Order(models.Model):
         IN_PROGRESS = "in_progress"
         COOKED = "cooked"
         DELIVERED = "delivered"
+        BILLED = "billed"
 
     waiter = models.ForeignKey(Waiter, on_delete=models.SET_NULL, default=None, null=True)
     table = models.ForeignKey(Table, on_delete=models.SET_NULL, default=None, null=True)
@@ -45,6 +46,11 @@ class Order(models.Model):
     dish_ID = models.IntegerField(default=-1)
     extra_wishes = models.CharField(max_length=250, default=None, blank=True, null=True)
 
+    def __str__(self):
+        return 'Status: ' + self.OrderStatus + '\nDish: ' + str(self.dish_ID) + '\nExtra wishes: ' + self.extra_wishes + '\n\n'
+
+    def getTableNumber(self, pk):
+        return self.table
 
 #Model Reservation
 class Reservation(models.Model):

@@ -4,10 +4,10 @@
         "pk": 1,
         "fields": {
             "waiter": 1,
-            "chef": null,
+            "chef": 1,
             "timestamp": "2022-04-26T20:13:00.00Z",
             "table": 4,
-            "status": "unassigned",
+            "status": "billed",
             "dish_ID": 3,
             "extra_wishes": null
         }
@@ -18,9 +18,9 @@
         "fields": {
             "waiter": 2,
             "chef": 2,
-            "timestamp": "2022-04-27T18:21:00.00Z",
+            "timestamp": "2022-04-26T18:21:00.00Z",
             "table": 3,
-            "status": "in_progress",
+            "status": "billed",
             "dish_ID": 22,
             "extra_wishes": "no ketchup"
         }
@@ -31,9 +31,9 @@
         "fields": {
             "waiter": 3,
             "chef": 3,
-            "timestamp": "2022-05-25T21:25:00.00Z",
+            "timestamp": "2022-04-26T21:25:00.00Z",
             "table": 1,
-            "status": "in_progress",
+            "status": "billed",
             "dish_ID": 43,
             "extra_wishes": "extra salat"
         }
@@ -43,10 +43,10 @@
         "pk": 4,
         "fields": {
             "waiter": 1,
-            "chef": null,
-            "timestamp": "2022-04-24T20:34:00.00Z",
+            "chef": 2,
+            "timestamp": "2022-04-26T20:34:00.00Z",
             "table": 5,
-            "status": "cooked",
+            "status": "delivered",
             "dish_ID": 26,
             "extra_wishes": null
         }
@@ -59,7 +59,7 @@
             "chef": 1,
             "timestamp": "2022-04-27T19:32:00.00Z",
             "table": 17,
-            "status": "delivered",
+            "status": "in_progress",
             "dish_ID": 5,
             "extra_wishes": "no pineapple"
         }
@@ -70,7 +70,7 @@
         "fields": {
             "waiter": 3,
             "chef": null,
-            "timestamp": "2022-04-26T20:17:00.00Z",
+            "timestamp": "2022-04-27T20:17:00.00Z",
             "table": 9,
             "status": "unassigned",
             "dish_ID": 54,
@@ -83,7 +83,7 @@
         "fields": {
             "waiter": 1,
             "chef": null,
-            "timestamp": "2022-04-26T20:13:00.00Z",
+            "timestamp": "2022-04-27T20:13:00.00Z",
             "table": 4,
             "status": "unassigned",
             "dish_ID": 87,
@@ -96,9 +96,9 @@
         "fields": {
             "waiter": 2,
             "chef": 2,
-            "timestamp": "2022-04-19T18:45:00.00Z",
+            "timestamp": "2022-04-27T18:32:00.00Z",
             "table": 7,
-            "status": "delivered",
+            "status": "in_progress",
             "dish_ID": 2,
             "extra_wishes": "extra plate"
         }
@@ -109,10 +109,127 @@
         "fields": {
             "waiter": 3,
             "chef": 3,
-            "timestamp": "2022-04-24T18:40:00.00Z",
+            "timestamp": "2022-04-27T18:40:00.00Z",
             "table": 12,
             "status": "cooked",
             "dish_ID": 26,
+            "extra_wishes": null
+        }
+     },
+  {
+        "model": "main.order",
+        "pk": 10,
+        "fields": {
+            "waiter": 1,
+            "chef": null,
+            "timestamp": "2022-04-27T20:13:00.00Z",
+            "table": 5,
+            "status": "unassigned",
+            "dish_ID": 32,
+            "extra_wishes": null
+        }
+     },
+     {
+        "model": "main.order",
+        "pk": 11,
+        "fields": {
+            "waiter": 2,
+            "chef": 2,
+            "timestamp": "2022-04-27T18:21:00.00Z",
+            "table": 3,
+            "status": "in_progress",
+            "dish_ID": 22,
+            "extra_wishes": "no ketchup"
+        }
+     },
+     {
+        "model": "main.order",
+        "pk": 12,
+        "fields": {
+            "waiter": 3,
+            "chef": 3,
+            "timestamp": "2022-04-27T21:25:00.00Z",
+            "table": 1,
+            "status": "in_progress",
+            "dish_ID": 43,
+            "extra_wishes": "extra salat"
+        }
+     },
+  {
+        "model": "main.order",
+        "pk": 13,
+        "fields": {
+            "waiter": 1,
+            "chef": 3,
+            "timestamp": "2022-04-27T20:34:00.00Z",
+            "table": 5,
+            "status": "in_progress",
+            "dish_ID": 26,
+            "extra_wishes": null
+        }
+     },
+     {
+        "model": "main.order",
+        "pk": 14,
+        "fields": {
+            "waiter": 2,
+            "chef": 1,
+            "timestamp": "2022-04-27T19:32:00.00Z",
+            "table": 17,
+            "status": "delivered",
+            "dish_ID": 5,
+            "extra_wishes": "no pineapple"
+        }
+     },
+     {
+        "model": "main.order",
+        "pk": 15,
+        "fields": {
+            "waiter": 3,
+            "chef": null,
+            "timestamp": "2022-04-27T20:17:00.00Z",
+            "table": 9,
+            "status": "unassigned",
+            "dish_ID": 54,
+            "extra_wishes": "medium"
+        }
+     },
+  {
+        "model": "main.order",
+        "pk": 16,
+        "fields": {
+            "waiter": 1,
+            "chef": null,
+            "timestamp": "2022-04-27T20:13:00.00Z",
+            "table": 4,
+            "status": "unassigned",
+            "dish_ID": 87,
+            "extra_wishes": null
+        }
+     },
+     {
+        "model": "main.order",
+        "pk": 17,
+        "fields": {
+            "waiter": 2,
+            "chef": 2,
+            "timestamp": "2022-04-27T18:45:00.00Z",
+            "table": 13,
+            "status": "delivered",
+            "dish_ID": 55,
+            "extra_wishes": "extra plate"
+        }
+     },
+     {
+        "model": "main.order",
+        "pk": 18,
+        "fields": {
+            "waiter": 3,
+            "chef": 3,
+            "timestamp": "2022-04-27T18:40:00.00Z",
+            "table": 12,
+            "status": "cooked",
+            "dish_ID": 65,
             "extra_wishes": null
         }
      }
