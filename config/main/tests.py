@@ -12,7 +12,6 @@ ALL_FIXTURES = [
     "orders.json"
 ]
 
-
 class WaitersTests(TestCase):
     fixtures = ALL_FIXTURES
 
@@ -47,12 +46,47 @@ class WaitersTests(TestCase):
             print(order.info_for_waiter())
 
     def test_delete_order(self):
-        return
+        # Number of Orders before
+        all_orders = Order.objects.filter()
+
+        if not all_orders.exists():
+            return
+
+        number_of_orders_before = all_orders.count()
+
+        orderToDeletePK = 4
+
+        Order.objects.filter(pk=orderToDeletePK).delete()
+
+        number_of_orders_after = all_orders.count()
+
+        if number_of_orders_after < number_of_orders_before:
+            print('\n\nSuccessfully deleted an order!\n' + \
+                  'Orders before: ' + str(number_of_orders_before) + \
+                  ' - Orders after: ' + str(number_of_orders_after))
 
     def test_create_reservation(self):
-        return
-        #mit mehreren Tischen ->manytomany zeigen!!!
-        #mit .add machen
+        allReservations = Reservation.objects.filter()
+
+        if not allReservations.exists():
+            return
+
+        numberOfReservationsBefore = allReservations.count()
+
+        tableIds = Table()
+        tableIds.set(pk=15)
+
+        Reservation.objects.create(customer_name='Mayer',
+                                   table=tableIds,
+                                   timestamp="2022-05-27T18:00:00.00Z",
+                                   places=8)
+
+        numberOfReservationsAfter = allReservations.count()
+
+        if numberOfReservationsAfter > numberOfReservationsBefore:
+            print('\n\nSuccessfully created new order!\n' + \
+                  'Orders before: ' + str(numberOfReservationsBefore) + \
+                  ' - Orders after: ' + str(numberOfReservationsAfter))
 
 class ChefsTests(TestCase):
     fixtures = ALL_FIXTURES
@@ -87,9 +121,26 @@ class ChefsTests(TestCase):
 
 
 class AdminTest(TestCase):
+    fixtures = ALL_FIXTURES
 
-    def test_admin_create_new_chef(self):
-        return
+    def test_admin_create_new_waiter(self):
+        # Number of Waiters before
+        allWaiters = Waiter.objects.filter()
+
+        numberOfWaitersBefore = allWaiters.count()
+
+        if not allWaiters.exists():
+            return
+
+        Waiter.objects.create(surname="Mario",
+                              lastname="Kluge")
+
+        numberOfWaitersAfter = allWaiters.count()
+
+        if numberOfWaitersAfter > numberOfWaitersBefore:
+            print('\n\nSuccessfully created new order!\n' + \
+                  'Waiters before: ' + str(numberOfWaitersBefore) + \
+                  ' - Waiters after: ' + str(numberOfWaitersAfter))
 
 
 
