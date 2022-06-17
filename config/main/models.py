@@ -65,7 +65,7 @@ class Order(models.Model):
 class Reservation(models.Model):
     customer_name = models.CharField(max_length=100)
     timestamp = models.DateTimeField(default=None, null=True)
-    table = models.ManyToManyField(Table)#, on_delete=models.SET_NULL, null=True)
+    table = models.ManyToManyField(Table)
     places = models.IntegerField(default=None, null=True)
 
 
