@@ -8,8 +8,8 @@
             "timestamp": "2022-04-26T20:13:00.00Z",
             "table": 4,
             "status": "billed",
-            "dish_ID": 3,
-            "extra_wishes": null
+            "dishId": 3,
+            "extraWishes": null
         }
      },
      {
@@ -21,8 +21,8 @@
             "timestamp": "2022-04-26T18:21:00.00Z",
             "table": 3,
             "status": "billed",
-            "dish_ID": 22,
-            "extra_wishes": "no ketchup"
+            "dishId": 22,
+            "extraWishes": "no ketchup"
         }
      },
      {
@@ -34,8 +34,8 @@
             "timestamp": "2022-04-26T21:25:00.00Z",
             "table": 1,
             "status": "billed",
-            "dish_ID": 43,
-            "extra_wishes": "extra salat"
+            "dishId": 43,
+            "extraWishes": "extra salat"
         }
      },
   {
@@ -47,8 +47,8 @@
             "timestamp": "2022-04-26T20:34:00.00Z",
             "table": 5,
             "status": "delivered",
-            "dish_ID": 26,
-            "extra_wishes": null
+            "dishId": 26,
+            "extraWishes": null
         }
      },
      {
@@ -60,8 +60,8 @@
             "timestamp": "2022-04-27T19:32:00.00Z",
             "table": 17,
             "status": "in_progress",
-            "dish_ID": 5,
-            "extra_wishes": "no pineapple"
+            "dishId": 5,
+            "extraWishes": "no pineapple"
         }
      },
      {
@@ -73,8 +73,8 @@
             "timestamp": "2022-04-27T20:17:00.00Z",
             "table": 9,
             "status": "unassigned",
-            "dish_ID": 54,
-            "extra_wishes": "medium"
+            "dishId": 54,
+            "extraWishes": "medium"
         }
      },
   {
@@ -86,8 +86,8 @@
             "timestamp": "2022-04-27T20:13:00.00Z",
             "table": 4,
             "status": "unassigned",
-            "dish_ID": 87,
-            "extra_wishes": null
+            "dishId": 87,
+            "extraWishes": null
         }
      },
      {
@@ -99,8 +99,8 @@
             "timestamp": "2022-04-27T18:32:00.00Z",
             "table": 7,
             "status": "in_progress",
-            "dish_ID": 2,
-            "extra_wishes": "extra plate"
+            "dishId": 2,
+            "extraWishes": "extra plate"
         }
      },
      {
@@ -112,8 +112,8 @@
             "timestamp": "2022-04-27T18:40:00.00Z",
             "table": 4,
             "status": "cooked",
-            "dish_ID": 26,
-            "extra_wishes": "extra cutlery"
+            "dishId": 26,
+            "extraWishes": "extra cutlery"
         }
      },
   {
@@ -125,8 +125,8 @@
             "timestamp": "2022-04-27T20:13:00.00Z",
             "table": 5,
             "status": "unassigned",
-            "dish_ID": 32,
-            "extra_wishes": null
+            "dishId": 32,
+            "extraWishes": null
         }
      },
      {
@@ -138,8 +138,8 @@
             "timestamp": "2022-04-27T18:21:00.00Z",
             "table": 3,
             "status": "in_progress",
-            "dish_ID": 22,
-            "extra_wishes": "no ketchup"
+            "dishId": 22,
+            "extraWishes": "no ketchup"
         }
      },
      {
@@ -151,8 +151,8 @@
             "timestamp": "2022-04-27T21:25:00.00Z",
             "table": 1,
             "status": "in_progress",
-            "dish_ID": 43,
-            "extra_wishes": "extra salat"
+            "dishId": 43,
+            "extraWishes": "extra salat"
         }
      },
   {
@@ -164,8 +164,8 @@
             "timestamp": "2022-04-27T20:34:00.00Z",
             "table": 5,
             "status": "in_progress",
-            "dish_ID": 26,
-            "extra_wishes": null
+            "dishId": 26,
+            "extraWishes": null
         }
      },
      {
@@ -177,8 +177,8 @@
             "timestamp": "2022-04-27T19:32:00.00Z",
             "table": 17,
             "status": "delivered",
-            "dish_ID": 5,
-            "extra_wishes": "no pineapple"
+            "dishId": 5,
+            "extraWishes": "no pineapple"
         }
      },
      {
@@ -190,8 +190,8 @@
             "timestamp": "2022-04-27T20:17:00.00Z",
             "table": 9,
             "status": "unassigned",
-            "dish_ID": 24,
-            "extra_wishes": "no salad"
+            "dishId": 24,
+            "extraWishes": "no salad"
         }
      },
   {
@@ -203,8 +203,8 @@
             "timestamp": "2022-04-27T20:13:00.00Z",
             "table": 4,
             "status": "unassigned",
-            "dish_ID": 87,
-            "extra_wishes": "extra plate"
+            "dishId": 87,
+            "extraWishes": "extra plate"
         }
      },
      {
@@ -216,8 +216,8 @@
             "timestamp": "2022-04-27T18:45:00.00Z",
             "table": 13,
             "status": "delivered",
-            "dish_ID": 55,
-            "extra_wishes": "extra plate"
+            "dishId": 55,
+            "extraWishes": "extra plate"
         }
      },
      {
@@ -229,8 +229,8 @@
             "timestamp": "2022-04-27T18:40:00.00Z",
             "table": 12,
             "status": "cooked",
-            "dish_ID": 65,
-            "extra_wishes": null
+            "dishId": 65,
+            "extraWishes": null
         }
      }
 ]

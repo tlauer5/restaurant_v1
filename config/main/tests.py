@@ -1,7 +1,6 @@
 from datetime import datetime
 
 from django.test import TestCase
-from django.utils import dateparse
 from .models import *
 
 ALL_FIXTURES = [
@@ -17,27 +16,27 @@ class WaitersTests(TestCase):
 
     def test_create_order(self):
         # Number of Orders before
-        all_orders = Order.objects.filter()
+        allOrders = Order.objects.filter()
 
-        if not all_orders.exists():
+        if not allOrders.exists():
             return
 
-        number_of_orders_before = all_orders.count()
+        numberOfOrdersBefore = allOrders.count()
 
         Order.objects.create(waiter_id=3,
                              table_id=13,
                              chef_id=None,
                              timestamp=datetime.now(),
                              status=Order.OrderStatus.UNASSIGNED,
-                             dish_ID=63,
-                             extra_wishes='extra pepper')
+                             dishId=63,
+                             extraWishes='extra pepper')
 
-        number_of_orders_after = all_orders.count()
+        numberOfOrdersAfter = allOrders.count()
 
-        if number_of_orders_after > number_of_orders_before:
+        if numberOfOrdersAfter > numberOfOrdersBefore:
             print('\n\nSuccessfully created new order!\n' + \
-                  'Orders before: ' + str(number_of_orders_before) + \
-                  ' - Orders after: ' + str(number_of_orders_after))
+                  'Orders before: ' + str(numberOfOrdersBefore) + \
+                  ' - Orders after: ' + str(numberOfOrdersAfter))
 
     def test_show_cooked_orders(self):
         cookedOrders = Order.objects.filter(status=Order.OrderStatus.COOKED)
@@ -46,24 +45,23 @@ class WaitersTests(TestCase):
             print(order.info_for_waiter())
 
     def test_delete_order(self):
-        # Number of Orders before
-        all_orders = Order.objects.filter()
+        allOrders = Order.objects.filter()
 
-        if not all_orders.exists():
+        if not allOrders.exists():
             return
 
-        number_of_orders_before = all_orders.count()
+        numberOfOrdersBefore = allOrders.count()
 
         orderToDeletePk = 4
 
         Order.objects.filter(pk=orderToDeletePk).delete()
 
-        number_of_orders_after = all_orders.count()
+        numberOfOrdersAfter = allOrders.count()
 
-        if number_of_orders_after < number_of_orders_before:
+        if numberOfOrdersAfter < numberOfOrdersBefore:
             print('\n\nSuccessfully deleted an order!\n' + \
-                  'Orders before: ' + str(number_of_orders_before) + \
-                  ' - Orders after: ' + str(number_of_orders_after))
+                  'Orders before: ' + str(numberOfOrdersBefore) + \
+                  ' - Orders after: ' + str(numberOfOrdersAfter))
 
     def test_create_reservation(self):
         allReservations = Reservation.objects.filter()
@@ -74,7 +72,7 @@ class WaitersTests(TestCase):
         numberOfReservationsBefore = allReservations.count()
 
         firstTablePk, secondTablePk= 15, 16
-        newReservation = Reservation.objects.create(customer_name='Mayer',
+        newReservation = Reservation.objects.create(customerName='Mayer',
                                                     timestamp="2022-05-27T18:00:00.00Z",
                                                     places=8)
 
@@ -86,8 +84,8 @@ class WaitersTests(TestCase):
         numberOfReservationsAfter = allReservations.count()
 
         if numberOfReservationsAfter > numberOfReservationsBefore:
-            print('\n\nSuccessfully created new order!\n' + \
-                  'Orders before: ' + str(numberOfReservationsBefore) + \
+            print('\n\nSuccessfully created new order!\n' +
+                  'Orders before: ' + str(numberOfReservationsBefore) +
                   ' - Orders after: ' + str(numberOfReservationsAfter))
 
 class ChefsTests(TestCase):
@@ -95,29 +93,29 @@ class ChefsTests(TestCase):
 
     def test_show_unassigned_orders(self):
 
-        unassigned_orders = Order.objects.filter(status=Order.OrderStatus.UNASSIGNED)
+        unassignedOrders = Order.objects.filter(status=Order.OrderStatus.UNASSIGNED)
 
-        for order in unassigned_orders:
+        for order in unassignedOrders:
             print(order.info_for_chef())
 
     def test_assign_order_to_chef(self):
         new_order_pk = 1
 
-        unassigned_orders = Order.objects.filter(status=Order.OrderStatus.UNASSIGNED)
+        unassignedOrders = Order.objects.filter(status=Order.OrderStatus.UNASSIGNED)
 
-        if not unassigned_orders.exists():
+        if not unassignedOrders.exists():
             return
 
-        order_to_assign_pk = unassigned_orders[0].pk
+        orderToAssignPk = unassignedOrders[0].pk
 
         # Current PK and Status
-        print(Order.objects.filter(pk=order_to_assign_pk)[0].info_for_chef())
+        print(Order.objects.filter(pk=orderToAssignPk)[0].info_for_chef())
 
         # Update PK and Status
-        Order.objects.filter(pk=order_to_assign_pk).update(chef=new_order_pk, status=Order.OrderStatus.IN_PROGRESS)
+        Order.objects.filter(pk=orderToAssignPk).update(chef=new_order_pk, status=Order.OrderStatus.IN_PROGRESS)
 
         # Updated PK and Status
-        print(Order.objects.filter(pk=order_to_assign_pk)[0].info_for_chef())
+        print(Order.objects.filter(pk=orderToAssignPk)[0].info_for_chef())
 
 
 class AdminsTest(TestCase):
@@ -138,8 +136,8 @@ class AdminsTest(TestCase):
         numberOfWaitersAfter = allWaiters.count()
 
         if numberOfWaitersAfter > numberOfWaitersBefore:
-            print('\n\nSuccessfully created new order!\n' + \
-                  'Waiters before: ' + str(numberOfWaitersBefore) + \
+            print('\n\nSuccessfully created new order!\n' +
+                  'Waiters before: ' + str(numberOfWaitersBefore) +
                   ' - Waiters after: ' + str(numberOfWaitersAfter))
 
 

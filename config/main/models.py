@@ -9,7 +9,7 @@ class Waiter(models.Model):
     lastname = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.surname + ' ' + self.lastname
+        return str(self.surname) + ' ' + str(self.lastname)
 
 
 # Model Chef
@@ -18,19 +18,20 @@ class Chef(models.Model):
     lastname = models.CharField(max_length=100, default='')
 
     def __str__(self):
-        return self.surname + ' ' + self.lastname
+        return str(self.surname) + ' ' + str(self.lastname)
 
 # Model Table
 class Table(models.Model):
-    table_number = models.IntegerField(default=None, null=True)
+    tableNumber = models.IntegerField(default=None, null=True)
     places = models.IntegerField(default=None, null=True)
 
     def __str__(self):
-        return '\nTable: ' + str(self.table_number) + '\n\n'
+        return '\nTable: ' + str(self.tableNumber) + '\n\n'
 
 
 # Model Order
 class Order(models.Model):
+
     class OrderStatus(models.TextChoices):  # Alternativ mit IntegerChoices
         UNASSIGNED = "unassigned"
         IN_PROGRESS = "in_progress"
@@ -43,27 +44,27 @@ class Order(models.Model):
     chef = models.ForeignKey(Chef, on_delete=models.SET_NULL, default=None, blank=True, null=True)
     timestamp = models.DateTimeField(default=None)
     status = models.CharField(max_length=20, choices=OrderStatus.choices, default=OrderStatus.UNASSIGNED)
-    dish_ID = models.IntegerField(default=-1)
-    extra_wishes = models.CharField(max_length=250, default=None, blank=True, null=True)
+    dishId = models.IntegerField(default=-1)
+    extraWishes = models.CharField(max_length=250, default=None, blank=True, null=True)
 
     def info_for_chef(self):
         return '\nStatus: ' + self.get_status_display() + \
                '\nChef: ' + str(self.chef) + \
-               '\nDish: ' + str(self.dish_ID) + \
-               '\nExtra wishes: ' + str(self.extra_wishes) + \
+               '\nDish: ' + str(self.dishId) + \
+               '\nExtra wishes: ' + str(self.extraWishes) + \
                '\n\n'
 
     def info_for_waiter(self):
         return '\nStatus: ' + self.get_status_display() + \
                '\nWaiter: ' + str(self.waiter) + \
-               '\nTable Number: ' + str(self.table.table_number) + \
-               '\nDish: ' + str(self.dish_ID) + \
-               '\nExtra wishes: ' + str(self.extra_wishes) + \
+               '\nTable Number: ' + str(self.table.tableNumber) + \
+               '\nDish: ' + str(self.dishId) + \
+               '\nExtra wishes: ' + str(self.extraWishes) + \
                '\n\n'
 
 # Model Reservation
 class Reservation(models.Model):
-    customer_name = models.CharField(max_length=100)
+    customerName = models.CharField(max_length=100)
     timestamp = models.DateTimeField(default=None, null=True)
     table = models.ManyToManyField(Table)
     places = models.IntegerField(default=None, null=True)
@@ -113,7 +114,7 @@ class Reservation(models.Model):
 #https://stackoverflow.com/questions/59606682/how-to-get-textchoice-enum-value-in-str-method
 
 #an value von foreign key rankommen:
-#self.table.table_number
+#self.table.tableNumber
 
 #wenn man TextChoices hat dann gibt es immer eine methode get_FOO_display() mit der der String von dem Jeweiligen Choice ausgegeben werden kann
 
