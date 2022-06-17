@@ -26,7 +26,7 @@ class Table(models.Model):
     places = models.IntegerField(default=None, null=True)
 
     def __str__(self):
-        return '\nTable: ' + self.table_number + '\n\n'
+        return '\nTable: ' + str(self.table_number) + '\n\n'
 
 
 # Model Order
