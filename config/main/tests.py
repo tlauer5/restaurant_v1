@@ -54,9 +54,9 @@ class WaitersTests(TestCase):
 
         number_of_orders_before = all_orders.count()
 
-        orderToDeletePK = 4
+        orderToDeletePk = 4
 
-        Order.objects.filter(pk=orderToDeletePK).delete()
+        Order.objects.filter(pk=orderToDeletePk).delete()
 
         number_of_orders_after = all_orders.count()
 
@@ -73,13 +73,15 @@ class WaitersTests(TestCase):
 
         numberOfReservationsBefore = allReservations.count()
 
-        tableIds = Table()
-        tableIds.set(pk=15)
+        firstTablePk, secondTablePk= 15, 16
+        newReservation = Reservation.objects.create(customer_name='Mayer',
+                                                    timestamp="2022-05-27T18:00:00.00Z",
+                                                    places=8)
 
-        Reservation.objects.create(customer_name='Mayer',
-                                   table=tableIds,
-                                   timestamp="2022-05-27T18:00:00.00Z",
-                                   places=8)
+        newReservation.table.set([firstTablePk, secondTablePk])
+        #oder auch mit .add(15) -> man muss erst Instanz erstellen bevor man many to many field beschreiben kann...
+
+        #print(newReservation)
 
         numberOfReservationsAfter = allReservations.count()
 
@@ -108,8 +110,6 @@ class ChefsTests(TestCase):
 
         order_to_assign_pk = unassigned_orders[0].pk
 
-        print('PK: ' + str(order_to_assign_pk) + '\n')
-
         # Current PK and Status
         print(Order.objects.filter(pk=order_to_assign_pk)[0].info_for_chef())
 
@@ -120,7 +120,7 @@ class ChefsTests(TestCase):
         print(Order.objects.filter(pk=order_to_assign_pk)[0].info_for_chef())
 
 
-class AdminTest(TestCase):
+class AdminsTest(TestCase):
     fixtures = ALL_FIXTURES
 
     def test_admin_create_new_waiter(self):

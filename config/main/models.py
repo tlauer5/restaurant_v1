@@ -68,6 +68,25 @@ class Reservation(models.Model):
     table = models.ManyToManyField(Table)
     places = models.IntegerField(default=None, null=True)
 
+    def __str__(self):
+        return "\n\nID: " + str(self.pk) + \
+               '\ntimestamp: ' + str(self.timestamp) + \
+               '\nplaces: ' + str(self.places) + \
+               '\ntable(s): ' + str(self.extractTableNumbers())
+
+    def extractTableNumbers(self):
+        #function which extracts only the table numbers from a queryset and returns them as string
+        qSet = Reservation.objects.get(pk=self.pk).table.all() #table.all() gets manytomany values
+
+        stringWithTableNumbers = ''
+
+        for stringItem in qSet:
+            stringWithTableNumbers += str([int(num) for num in str(stringItem).split() if num.isdigit()][0])
+            stringWithTableNumbers += ', '
+
+        stringWithTableNumbers = stringWithTableNumbers[:-2]
+
+        return stringWithTableNumbers
 
 
 
