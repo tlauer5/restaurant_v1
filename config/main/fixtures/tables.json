@@ -3,7 +3,7 @@
         "model": "main.table",
         "pk": 1,
         "fields": {
-            "table_number": 10,
+            "tableNumber": 10,
             "places": 2
         }
      },
@@ -11,7 +11,7 @@
         "model": "main.table",
         "pk": 2,
         "fields": {
-            "table_number": 12,
+            "tableNumber": 12,
             "places": 2
         }
      },
@@ -19,7 +19,7 @@
         "model": "main.table",
         "pk": 3,
         "fields": {
-            "table_number": 13,
+            "tableNumber": 13,
             "places": 4
         }
      },
@@ -27,7 +27,7 @@
         "model": "main.table",
         "pk": 4,
         "fields": {
-            "table_number": 14,
+            "tableNumber": 14,
             "places": 2
         }
      },
@@ -35,7 +35,7 @@
         "model": "main.table",
         "pk": 5,
         "fields": {
-            "table_number": 15,
+            "tableNumber": 15,
             "places": 4
         }
      },
@@ -43,7 +43,7 @@
         "model": "main.table",
         "pk": 6,
         "fields": {
-            "table_number": 20,
+            "tableNumber": 20,
             "places": 3
         }
      },
@@ -51,7 +51,7 @@
         "model": "main.table",
         "pk": 7,
         "fields": {
-            "table_number": 21,
+            "tableNumber": 21,
             "places": 4
         }
      },
@@ -59,7 +59,7 @@
         "model": "main.table",
         "pk": 8,
         "fields": {
-            "table_number": 22,
+            "tableNumber": 22,
             "places": 2
         }
      },
@@ -67,14 +67,14 @@
         "model": "main.table",
         "pk": 9,
         "fields": {
-            "table_number": 23,
+            "tableNumber": 23,
             "places": 8
         }
      }, {
         "model": "main.table",
         "pk": 10,
         "fields": {
-            "table_number": 24,
+            "tableNumber": 24,
             "places": 4
         }
      },
@@ -82,7 +82,7 @@
         "model": "main.table",
         "pk": 11,
         "fields": {
-            "table_number": 25,
+            "tableNumber": 25,
             "places": 4
         }
      },
@@ -90,7 +90,7 @@
         "model": "main.table",
         "pk": 12,
         "fields": {
-            "table_number": 30,
+            "tableNumber": 30,
             "places": 6
         }
      },
@@ -98,7 +98,7 @@
         "model": "main.table",
         "pk": 13,
         "fields": {
-            "table_number": 31,
+            "tableNumber": 31,
             "places": 6
         }
      },
@@ -106,7 +106,7 @@
         "model": "main.table",
         "pk": 14,
         "fields": {
-            "table_number": 32,
+            "tableNumber": 32,
             "places": 2
         }
      },
@@ -114,14 +114,14 @@
         "model": "main.table",
         "pk": 15,
         "fields": {
-            "table_number": 33,
+            "tableNumber": 33,
             "places": 4
         }
      }, {
         "model": "main.table",
         "pk": 16,
         "fields": {
-            "table_number": 34,
+            "tableNumber": 34,
             "places": 6
         }
      },
@@ -129,7 +129,7 @@
         "model": "main.table",
         "pk": 17,
         "fields": {
-            "table_number": 35,
+            "tableNumber": 35,
             "places": 4
         }
      },
@@ -137,7 +137,7 @@
         "model": "main.table",
         "pk": 18,
         "fields": {
-            "table_number": 41,
+            "tableNumber": 41,
             "places": 4
         }
      },
@@ -145,7 +145,7 @@
         "model": "main.table",
         "pk": 19,
         "fields": {
-            "table_number": 42,
+            "tableNumber": 42,
             "places": 2
         }
      },
@@ -153,14 +153,14 @@
         "model": "main.table",
         "pk": 20,
         "fields": {
-            "table_number": 50,
+            "tableNumber": 50,
             "places": 2
         }
      }, {
         "model": "main.table",
         "pk": 21,
         "fields": {
-            "table_number": 51,
+            "tableNumber": 51,
             "places": 2
         }
      },
@@ -168,7 +168,7 @@
         "model": "main.table",
         "pk": 22,
         "fields": {
-            "table_number": 52,
+            "tableNumber": 52,
             "places": 2
         }
      }
